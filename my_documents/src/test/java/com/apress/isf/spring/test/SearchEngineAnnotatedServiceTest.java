@@ -1,4 +1,4 @@
-package com.apress.isf.java.service;
+package com.apress.isf.spring.test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -11,6 +11,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.apress.isf.java.model.Document;
 import com.apress.isf.java.model.Type;
+import com.apress.isf.java.service.MySearchEngine;
+import com.apress.isf.java.service.SearchEngine;
 
 public class SearchEngineAnnotatedServiceTest {
 
