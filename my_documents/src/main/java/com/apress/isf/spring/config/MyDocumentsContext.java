@@ -1,5 +1,7 @@
 package com.apress.isf.spring.config;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -82,16 +84,13 @@ public class MyDocumentsContext {
 
 	private DocumentDAO documentDAO() {
 		DocumentRepository documentDAO = new DocumentRepository();
-		documentDAO.setDoc1(getDocumentFromMap("doc1"));
-		documentDAO.setDoc2(getDocumentFromMap("doc2"));
-		documentDAO.setDoc3(getDocumentFromMap("doc3"));
-		documentDAO.setDoc4(getDocumentFromMap("doc4"));
+		documentDAO.setDocuments(new ArrayList<>(documents.values()));
 		return documentDAO;
 	}
 
-	private Document getDocumentFromMap(String documentKey) {
-		return documents.get(documentKey);
-	}
+//	private Document getDocumentFromMap(String documentKey) {
+//		return documents.get(documentKey);
+//	}
 
 	private Type getTypeFromMap(String typeKey) {
 		return types.get(typeKey);

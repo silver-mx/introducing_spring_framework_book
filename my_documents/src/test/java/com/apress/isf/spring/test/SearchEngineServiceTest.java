@@ -7,6 +7,8 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.apress.isf.java.model.Document;
@@ -16,6 +18,7 @@ import com.apress.isf.java.service.SearchEngine;
 
 public class SearchEngineServiceTest {
 
+	private static final Logger log = LoggerFactory.getLogger(SearchEngineServiceTest.class);
 	private ClassPathXmlApplicationContext context;
 	private Type webType;
 	private SearchEngine searchEngine = new MySearchEngine();
@@ -29,7 +32,7 @@ public class SearchEngineServiceTest {
 
 	@Test
 	public void testFindByType() {
-		
+		log.debug("Executing @Before");
 		List<Document> documents = searchEngine.findByType(webType);
 		assertThat(documents.size(), is(1));
 		assertThat(documents.get(0).getType().getName(), is(webType.getName()));

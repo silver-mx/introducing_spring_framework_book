@@ -29,10 +29,6 @@ public class MySearchEngineTest {
 
 	@Test
 	public void testFindByType() {
-		Type documentType = new Type();
-		documentType.setName("WEB");
-		documentType.setDesc("Web Link");
-		documentType.setExtension(".url");
 		
 		List<Document> documents = searchEngine.findByType(documentType);
 		assertThat(documents.size(), is(1));
